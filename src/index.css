@@ -1,0 +1,68 @@
+:root {
+  /* Стиль референса: светлый, кремовый, лавандово-фиолетовые акценты */
+  --bg: #f8f6f3;
+  --bg-gradient: linear-gradient(160deg, #faf8f5 0%, #f3eff8 50%, #f8f6f3 100%);
+  --bg-card: #ffffff;
+  --bg-card-hover: #fdfcfa;
+  --text: #793767;
+  --text-secondary: #793767;
+  --text-muted: #8b5a7d;
+  --accent: #7b68a6;
+  --accent-soft: #9d8fc9;
+  --accent-deep: #5c4d7a;
+  --accent-muted: rgba(123, 104, 166, 0.12);
+  --border: rgba(45, 42, 38, 0.08);
+  --border-accent: rgba(123, 104, 166, 0.25);
+  --font-display: 'Great Vibes', cursive;
+  --font-body: 'DM Sans', system-ui, sans-serif;
+  --radius: 14px;
+  --radius-lg: 24px;
+  --transition: 0.2s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.bg-stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--accent-deep);
+}
+
+h1, h2, h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+}
