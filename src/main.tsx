@@ -5,7 +5,7 @@ import './index.css'
 import App from './App.tsx'
 
 const basename =
-  import.meta.env.BASE.replace(/\/$/, '') || undefined
+  import.meta.env.BASE_URL.replace(/\/$/, '') || undefined
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
