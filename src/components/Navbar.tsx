@@ -16,7 +16,7 @@ export function Navbar() {
   return (
     <header className="navbar">
       <NavLink to="/" className="navbar__brand" end onClick={closeMenu}>
-        Массаж · Энергия
+        Курбатова Валерия
       </NavLink>
       <button
         type="button"

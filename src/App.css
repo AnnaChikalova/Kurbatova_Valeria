@@ -12,16 +12,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  background: #793767;
+  gap: 1rem;
+  padding: 1.2rem 2.4rem;
+  background: var(--accent-deep);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .navbar__brand {
   font-family: var(--font-body);
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
   color: #fff !important;
   transition: color var(--transition);
 }
@@ -71,7 +74,7 @@
   left: 0;
   right: 0;
   padding: 1rem 2rem;
-  background: #793767;
+  background: var(--accent-deep);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   gap: 0.25rem;
 }
@@ -106,7 +109,10 @@
   .navbar__menu {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     position: static;
+    margin-left: auto;
     padding: 0;
     background: none;
     border: none;
@@ -114,35 +120,58 @@
   }
 
   .navbar__link {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.75rem;
+    white-space: nowrap;
   }
 }
 
 /* ——— Hero ——— */
 .hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 5rem 1.5rem 6rem;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  min-height: calc(100vh - 2rem);
+  width: calc(100% - 1.8rem);
+  margin: 0.9rem auto;
+  display: grid;
+  gap: 1rem;
+  align-items: stretch;
 }
 
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(248, 246, 243, 0.25);
-  z-index: 0;
+.hero__media {
+  min-height: 360px;
+  border-radius: 36px;
+  background-size: cover;
+  background-position: left 56%;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(90, 54, 88, 0.2);
+  box-shadow: 0 14px 40px rgba(45, 42, 38, 0.12);
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    min-height: calc(100vh - 2rem);
+  }
+
+  .hero__media {
+    min-height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
 }
 
 .hero__inner {
-  position: relative;
-  z-index: 1;
-  max-width: 640px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 5rem clamp(1.25rem, 4vw, 3rem) 6rem;
+}
+
+@media (min-width: 1024px) {
+  .hero__inner {
+    text-align: right;
+  }
 }
 
 .hero__label {
@@ -161,28 +190,29 @@
   font-size: clamp(1.25rem, 8.5vw, 5.25rem);
   line-height: 1.2;
   letter-spacing: 0.02em;
-  color: #793767;
+  color: var(--text);
   margin-bottom: 1rem;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 .hero__tagline {
   font-size: 1.125rem;
   line-height: 1.75;
-  color: #793767;
+  color: var(--text);
   margin-bottom: 2.5rem;
   font-weight: 400;
 }
 
 .hero__cta {
   display: inline-block;
+  align-self: center;
   padding: 1rem 2.25rem;
   font-family: var(--font-body);
   font-size: 0.9375rem;
   font-weight: 500;
   letter-spacing: 0.04em;
   color: #fff;
-  background: #793767;
+  background: var(--accent-deep);
   border: none;
   border-radius: var(--radius);
   cursor: pointer;
@@ -190,8 +220,14 @@
   text-decoration: none;
 }
 
+@media (min-width: 1024px) {
+  .hero__cta {
+    align-self: flex-end;
+  }
+}
+
 .hero__cta:hover {
-  background: #6a2f5a;
+  background: #463854;
   transform: translateY(-1px);
 }
 
@@ -209,7 +245,7 @@
   font-size: clamp(1.5rem, 3.5vw, 1.875rem);
   font-weight: 600;
   text-align: center;
-  color: #793767;
+  color: var(--text);
   margin-bottom: 3rem;
   letter-spacing: 0.02em;
 }
@@ -224,7 +260,7 @@
 .about__text p {
   font-size: 1.0625rem;
   line-height: 1.8;
-  color: #793767;
+  color: var(--text);
   margin-bottom: 1.25rem;
 }
 
@@ -307,7 +343,7 @@
   font-family: var(--font-body);
   font-size: 1.125rem;
   font-weight: 600;
-  color: #793767;
+  color: var(--text);
   margin-bottom: 0.75rem;
   letter-spacing: 0.02em;
 }
@@ -315,7 +351,7 @@
 .service-card__desc {
   font-size: 0.9375rem;
   line-height: 1.65;
-  color: #793767;
+  color: var(--text);
 }
 
 /* ——— Contact ——— */
@@ -328,7 +364,7 @@
 .contact__text {
   font-size: 1.0625rem;
   line-height: 1.75;
-  color: #793767;
+  color: var(--text);
   margin-bottom: 2rem;
 }
 
@@ -347,7 +383,7 @@
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  color: #793767 !important;
+  color: var(--text) !important;
   transition: border-color var(--transition), background var(--transition), color var(--transition);
   box-shadow: 0 2px 12px rgba(45, 42, 38, 0.04);
 }

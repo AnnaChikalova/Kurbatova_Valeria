@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
-import heroImage from '../assets/SnapInsta.to_540388604_18049572743639267_4807897995972726624_n.jpg'
+import heroImage from '../assets/firstScreen.jpg'
 
 export function Hero() {
   return (
-    <section className="hero" style={{ backgroundImage: `url(${heroImage})` }}>
-      <div className="hero__overlay" />
+    <section className="hero">
+      <div className="hero__media" style={{ backgroundImage: `url(${heroImage})` }} />
       <div className="hero__inner">
         <p className="hero__label">Массаж и энергопрактики</p>
         <h1 className="hero__title">Баланс тела и духа</h1>
