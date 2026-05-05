@@ -41,6 +41,9 @@ export function Navbar() {
           </NavLink>
         ))}
       </nav>
+      <NavLink to="/contact" className="navbar__cta" onClick={closeMenu}>
+        Записаться
+      </NavLink>
     </header>
   )
 }

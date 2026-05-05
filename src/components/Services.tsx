@@ -20,7 +20,7 @@ export function Services() {
   return (
     <section id="services" className="section section--services">
       <div className="section__inner">
-        <h2 className="section__title">Услуги</h2>
+        <h2 className="section__title">Чем я могу быть полезна. Как я работаю</h2>
         <div className="services__grid">
           {services.map((s) => (
             <article key={s.title} className="service-card">

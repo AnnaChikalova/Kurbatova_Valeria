@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import heroImage from '../assets/firstScreen.jpg'
 
 export function Hero() {
@@ -6,14 +5,14 @@ export function Hero() {
     <section className="hero">
       <div className="hero__media" style={{ backgroundImage: `url(${heroImage})` }} />
       <div className="hero__inner">
-        <p className="hero__label">Массаж и энергопрактики</p>
-        <h1 className="hero__title">Баланс тела и духа</h1>
+        <h1 className="hero__title">
+          Энергетический Целитель, Духовный Мастер.
+          <br />
+          <span className="hero__title-subline">В моем поле ты изменишься</span>
+        </h1>
         <p className="hero__tagline">
-          Восстановление через прикосновение и тонкие практики — в тишине и доверии
+          Восстановление через массаж, телесные и энергопрактики
         </p>
-        <Link to="/contact" className="hero__cta">
-          Записаться на сессию
-        </Link>
       </div>
     </section>
   )
