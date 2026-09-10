@@ -1,20 +1,5 @@
-const services = [
-  {
-    title: 'Расслабляющий массаж',
-    description: 'Снятие мышечного и эмоционального напряжения, глубокое расслабление тела.',
-    icon: '◇',
-  },
-  {
-    title: 'Энергетические сессии',
-    description: 'Работа с тонким планом: выравнивание, снятие блоков, наполнение ресурсом.',
-    icon: '✧',
-  },
-  {
-    title: 'Комплексные сессии',
-    description: 'Сочетание массажа и энергопрактик для целостного восстановления.',
-    icon: '✦',
-  },
-]
+import { Link } from 'react-router-dom'
+import { services } from '../data/services'
 
 export function Services() {
   return (
@@ -23,11 +8,12 @@ export function Services() {
         <h2 className="section__title">Чем я могу быть полезна. Как я работаю</h2>
         <div className="services__grid">
           {services.map((s) => (
-            <article key={s.title} className="service-card">
+            <Link key={s.slug} to={`/services/${s.slug}`} className="service-card">
               <span className="service-card__icon" aria-hidden>{s.icon}</span>
               <h3 className="service-card__title">{s.title}</h3>
               <p className="service-card__desc">{s.description}</p>
-            </article>
+              <span className="service-card__more">Подробнее →</span>
+            </Link>
           ))}
         </div>
       </div>

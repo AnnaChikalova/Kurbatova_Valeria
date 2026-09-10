@@ -8,7 +8,6 @@ export function Contact() {
             Для записи на сессию или по вопросам сотрудничества свяжитесь со мной:
           </p>
           <div className="contact__links">
-            <a href="tel:+79000000000" className="contact__link">+7 (900) 000-00-00</a>
             <a href="https://t.me/username" target="_blank" rel="noreferrer" className="contact__link">Telegram</a>
           </div>
           <p className="contact__note">Работаю по предварительной записи</p>

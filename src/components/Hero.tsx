@@ -1,4 +1,4 @@
-import heroImage from '../assets/firstScreen.jpg'
+import heroImage from '../assets/fScreen.jpg'
 
 export function Hero() {
   return (
