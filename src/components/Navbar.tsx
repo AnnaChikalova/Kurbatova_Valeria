@@ -40,10 +40,10 @@ export function Navbar() {
             {item.label}
           </NavLink>
         ))}
+        <NavLink to="/contact" className="navbar__cta" onClick={closeMenu}>
+          Записаться
+        </NavLink>
       </nav>
-      <NavLink to="/contact" className="navbar__cta" onClick={closeMenu}>
-        Записаться
-      </NavLink>
     </header>
   )
 }
