@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import otz1 from '../assets/otz1.jpg'
 import otz2 from '../assets/otz2.jpg'
 import otz3 from '../assets/otz3.png'
@@ -13,7 +13,14 @@ const testimonials = [otz1, otz2, otz3, otz4, otz5, otz6, otz7, otz8, otz9]
 
 export function Testimonials() {
   const [index, setIndex] = useState(0)
+  const frameRef = useRef<HTMLDivElement>(null)
   const total = testimonials.length
+
+  useEffect(() => {
+    if (frameRef.current) {
+      frameRef.current.scrollTop = 0
+    }
+  }, [index])
 
   const goPrev = () => {
     setIndex((i) => (i === 0 ? total - 1 : i - 1))
@@ -37,12 +44,15 @@ export function Testimonials() {
             ‹
           </button>
 
-          <div className="testimonial-card" key={index}>
-            <img
-              className="testimonial-card__image"
-              src={testimonials[index]}
-              alt={`Отзыв ${index + 1}`}
-            />
+          <div className="testimonial-card">
+            <div className="testimonial-card__frame" ref={frameRef}>
+              <img
+                key={index}
+                className="testimonial-card__image"
+                src={testimonials[index]}
+                alt={`Отзыв ${index + 1}`}
+              />
+            </div>
           </div>
 
           <button

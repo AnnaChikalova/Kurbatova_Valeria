@@ -9,7 +9,13 @@ export function Services() {
         <div className="services__grid">
           {services.map((s) => (
             <Link key={s.slug} to={`/services/${s.slug}`} className="service-card">
-              <span className="service-card__icon" aria-hidden>{s.icon}</span>
+              <span className="service-card__media">
+                {s.image ? (
+                  <img className="service-card__image" src={s.image} alt="" />
+                ) : (
+                  <span className="service-card__icon" aria-hidden>{s.icon}</span>
+                )}
+              </span>
               <h3 className="service-card__title">{s.title}</h3>
               <p className="service-card__desc">{s.description}</p>
               <span className="service-card__more">Подробнее →</span>

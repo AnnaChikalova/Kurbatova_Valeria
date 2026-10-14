@@ -25,9 +25,20 @@ export function ServiceDetailPage() {
           ← Все услуги
         </Link>
 
-        <span className="service-detail__icon" aria-hidden>{service.icon}</span>
-        <h1 className="service-detail__title">{service.title}</h1>
-        <p className="service-detail__lead">{service.lead}</p>
+        {service.image && (
+          <div className="service-detail__image-wrap">
+            <img
+              className="service-detail__image"
+              src={service.image}
+              alt=""
+            />
+          </div>
+        )}
+        <div className={`service-detail__heading${service.image ? ' service-detail__heading--center' : ''}`}>
+          <span className="service-detail__icon" aria-hidden>{service.icon}</span>
+          <h1 className="service-detail__title">{service.title}</h1>
+          <p className="service-detail__lead">{service.lead}</p>
+        </div>
 
         <div className="service-detail__body">
           {service.details.map((paragraph) => (
