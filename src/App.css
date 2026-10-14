@@ -185,7 +185,7 @@
 .hero__media {
   min-height: 360px;
   margin: 0;
-  border-radius: 0 0 36px 0;
+  border-radius: 0;
   background-size: cover;
   background-position: left 56%;
   background-repeat: no-repeat;
@@ -200,6 +200,7 @@
 
   .hero__media {
     min-height: 100%;
+    border-radius: 0 0 36px 0;
     background-size: cover;
     background-position: center;
   }
@@ -854,7 +855,7 @@
   height: auto;
   flex-shrink: 0;
   margin-block: auto;
-  border-radius: 0;
+  border-radius: 12px;
   animation: testimonial-fade 0.3s ease;
 }
 
