@@ -878,19 +878,44 @@
   background: var(--accent);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
+  .section--testimonials {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
   .testimonials__slider {
-    gap: 0.4rem;
+    position: relative;
+    grid-template-columns: 0 minmax(0, 1fr) 0;
+    gap: 0;
   }
 
   .testimonials__arrow {
-    width: 2.35rem;
-    height: 2.35rem;
-    font-size: 1.5rem;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+    font-size: 1.45rem;
+    background: rgba(255, 255, 255, 0.86);
+  }
+
+  .testimonials__arrow--prev {
+    left: 0.2rem;
+    transform: translateY(-50%);
+  }
+
+  .testimonials__arrow--next {
+    right: 0.2rem;
+    transform: translateY(-50%);
+  }
+
+  .testimonials__arrow:hover {
+    transform: translateY(-50%) scale(1.05);
   }
 
   .testimonial-card {
-    height: min(58vh, 460px);
+    height: min(72vh, 580px);
     padding: 0;
   }
 }
