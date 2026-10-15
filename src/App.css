@@ -183,7 +183,7 @@
   width: 100%;
   margin: 0;
   display: grid;
-  gap: 1.2rem;
+  gap: 1.65rem;
   align-items: stretch;
   background: #efe5ed;
 }
@@ -218,7 +218,7 @@
   flex-direction: column;
   justify-content: flex-start;
   text-align: center;
-  padding: 0.9rem clamp(1.25rem, 4vw, 3rem) 1.6rem;
+  padding: 1.35rem clamp(1.25rem, 4vw, 3rem) 1.6rem;
 }
 
 @media (min-width: 1024px) {
