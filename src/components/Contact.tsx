@@ -42,7 +42,6 @@ export function Contact({ asPage = false }: { asPage?: boolean }) {
     <footer id="contact" className={`footer${asPage ? ' footer--page' : ''}`}>
       <div className="footer__inner">
         <p className="footer__brand">Курбатова Валерия</p>
-        <p className="footer__text">Для записи и вопросов напишите мне</p>
         <div className="footer__links">
           {socials.map((item) => (
             <a
